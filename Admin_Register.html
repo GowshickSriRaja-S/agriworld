@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="index1.css">
+  <title>Project Register page</title>
+</head>
+<body>
+    <section>
+        <div class="form-box">
+            <div class="form-value">
+                <form action="">
+                    <h2>Register</h2>
+                    <div class="inputbox">
+                        <ion-icon name="person-outline"></ion-icon>
+                        <input type="text" id="n1" required>
+                        <label for="">Company Name</label>
+                    </div>
+
+                    <div class="inputbox">
+                        <ion-icon name="mail-outline"></ion-icon>
+                        <input type="email" id="e1" required>
+                        <label for="">Email</label>
+                    </div>
+
+                    <div class="inputbox">
+                        <input type="number" id="p1" required>
+                        <label for="">Phone Number</label>
+                    </div>
+                    <button onclick="check()">Register</button>
+                    <div class="inputbox">
+                    <div class="register">
+                        <p>Already have an account?
+                        <a href="Admin_login.html">Login</a></p>
+                    </div>
+                </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    
+    <script type="text/javascript">
+        function check(){
+            var n=document.getElementById("n1").value;
+            var e=document.getElementById("e1").value;
+            var p=document.getElementById("p1").value;
+            var letters=/^[A-Za-z]+$/;
+            var email_val=/^([A-Za-z0-9_\.\-])+\@(([A-Za-z0-9\-])+\.)+([a-zA-Z0-9]{2,3})+$/;
+            if(n==''||e==''||p==''){
+                alert("Fill the requirements");
+            }
+            else if(!letters.test(n))
+            {
+                alert('Name is incorrect must contain alphabets only');
+            }
+            else if(!email_val.test(e))
+            {
+                alert('Invalid email formet');
+            }
+            else if(p!=10)
+            {
+                alert("Invalid Number");
+            }
+            else{
+                alert("We will send you the Password to your mail");
+            }
+        }
+        </script>
+</body>
+</html>
